@@ -14,9 +14,8 @@ class Player:
 		func = self.function.replace('x', str(x))
 		return eval(func)
 
+	def setProfit(self, profit):
+		self.profit = profit
 
-
-
-
-
-
+	def getProfit(self):
+		return self.profit
