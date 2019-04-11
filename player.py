@@ -6,8 +6,8 @@ from math import *
 class Player:
 
 	#create a player with given function which is a string 
-	def __init__(self, value):
-		#self.function = function
+	def __init__(self, function, value):
+		self.function = function
 		self.value = value
 		self.profit = 0
 		self.isSignaled = False

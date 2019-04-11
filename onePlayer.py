@@ -7,16 +7,15 @@ class OnePlayer:
 	def __init__(self, player):
 		self.player = player
 
-	def play(self):
-		prob = 0.5
+	def play(self,prob):		
 		i = 1
 		while True:
+			thisProb = sqrt(self.player.getAnxietyLevel(i))*prob
+			print(thisProb)
 			if self.player.getSignal(): #stock price exceeds the value
-				if random.randint(1, 100) <= (prob*100):
+				if random.randint(1, 100) <= thisProb:
 					self.player.setProfit(self.stockPrice(i))
 					return i
-				else:
-					prob += 0.1
 
 			else: #stock price hasn't exceed the value yet
 				if self.stockPrice(i) > self.player.getValue():
@@ -26,8 +25,9 @@ class OnePlayer:
 
 
 	def stockPrice(self, i):
-		return e**i
+		return e**(0.25*i)
 
-player = Player(50)
+print('start')
+player = Player('x**3', 50)
 game = OnePlayer(player)
-print(game.play())
+print(game.play(0.5))
