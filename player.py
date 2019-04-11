@@ -6,9 +6,11 @@ from math import *
 class Player:
 
 	#create a player with given function which is a string 
-	def __init__(self, function):
-		self.function = function
+	def __init__(self, value):
+		#self.function = function
+		self.value = value
 		self.profit = 0
+		self.isSignaled = False
 
 	#get the anxiety level with given time
 	def getAnxietyLevel(self, x):
@@ -22,3 +24,14 @@ class Player:
 	#get the profit
 	def getProfit(self):
 		return self.profit
+
+	def getValue(self):
+		return self.value
+
+	def setSignal(self):
+		self.isSignaled = True
+
+	def getSignal(self):
+		return self.isSignaled
+
+
