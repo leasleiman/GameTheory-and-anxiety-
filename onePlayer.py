@@ -15,11 +15,12 @@ class OnePlayer:
 			if self.player.getSignal(): #stock price exceeds the value
 				if random.randint(1, 100) <= thisProb:
 					self.player.setProfit(self.stockPrice(i))
-					return i
+					return i - afterSignal
 
 			else: #stock price hasn't exceed the value yet
 				if self.stockPrice(i) > self.player.getValue():
 					player.setSignal()
+					afterSignal = i
 			i+=1
 
 
@@ -27,7 +28,6 @@ class OnePlayer:
 	def stockPrice(self, i):
 		return e**(0.25*i)
 
-print('start')
-player = Player('x**3', 50)
+player = Player('x', 50)
 game = OnePlayer(player)
 print(game.play(0.5))
