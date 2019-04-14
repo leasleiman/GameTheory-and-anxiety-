@@ -63,6 +63,9 @@ class Game:
 
 
 
+
+
+
 players = [Player('x**2'), Player('x'), Player('2**x'), Player('log(x)'), Player('e**x'), Player('x**3'),
 Player('x**x**x'), Player('e**(-1/x**2)')]
 game = Game(players, 3, 0.6)
