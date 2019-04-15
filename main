@@ -12,9 +12,10 @@ import random
 listOfResults=""
 i=0
 
+#Fixed it at 0.04 cause that is what they have in the paper
 for i in range(5):
     player= Player(10)
-    game= Game(player,random.uniform(0.4,1.2),1)
+    game= Game(player,0.04,1)
     game.play()
     result=game.getDelay()
     listOfResults+=str(result)+","
