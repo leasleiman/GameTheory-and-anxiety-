@@ -12,7 +12,7 @@ import random
 
 class Game:
 
-        #initialize a game with a player, a probability of the most anxious player selling the stock, and the initial value of the stock
+        #initialize a game with a player, a rate of stcok growth, and the initial value of the stock
         def __init__(self, player, rate, initValue):
             self.player=player
             self.rate=rate
@@ -29,10 +29,12 @@ class Game:
 
         def getStockValue(self):
             return self.initValue
-        
+       
+        #delay is defined as the time period between when the signal is sent and the player sells the stock
         def getDelay(self):
             return self.delayTime
         
+       #Starts the game
         def play(self):
             self.setinitTime(time.time())
             self.player.startAnxiety(1+time.time()-self.initTime)
