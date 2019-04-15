@@ -11,7 +11,7 @@ Player class represents a player with given anxiety function
 from math import exp, sqrt
 import random
 
-#HAMR=Hamilton Anxiety Rating Scale 
+#HAMR=
 class Player:
 
     #create a player with given function which is a string
@@ -47,9 +47,16 @@ class Player:
             return self.HAMR
 
     def startAnxiety(self,anxTime):
-        anxiety= sqrt(exp(anxTime)/exp(random.randint(11,15)))
-        if (abs(anxiety-self.anxiety>5)):
-            self.HAMR = self.HAMR+ self.HAMR+4
+        anxiety= sqrt(exp(anxTime)/exp(10))
+       
+        if (abs(anxiety-self.anxiety>=16)):
+            self.HAMR +=4
+      
+        elif (abs(anxiety-self.anxiety>=7)):
+            self.HAMR += 3
+
+        elif (abs(anxiety-self.anxiety>=4)):
+            self.HAMR+=2
 
         self.anxiety=anxiety
                 
