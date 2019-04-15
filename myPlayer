@@ -49,13 +49,13 @@ class Player:
     def startAnxiety(self,anxTime):
         anxiety= sqrt(exp(anxTime)/exp(10))
        
-        if (abs(anxiety-self.anxiety>=16)):
+        if (abs(anxiety-self.anxiety>=10)):
             self.HAMR +=4
       
-        elif (abs(anxiety-self.anxiety>=7)):
+        elif (abs(anxiety-self.anxiety>=5)):
             self.HAMR += 3
 
-        elif (abs(anxiety-self.anxiety>=4)):
+        elif (abs(anxiety-self.anxiety>=3)):
             self.HAMR+=2
 
         self.anxiety=anxiety
