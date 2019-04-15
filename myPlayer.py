@@ -16,12 +16,13 @@ class Player:
 
     #create a player with given function which is a string
     #HAMR=Hamilton Anxiety Rating Scale
-    def __init__(self, fundValue):
+    def __init__(self, willToWin, fundValue):
         self.profit = 0
         self.signal=False
         self.fundValue= fundValue
         self.anxiety=1
         self.HAMR=0
+        self.willToWin=willToWin
 
     #get the anxiety level with given time
     def getAnxietyLevel(self):
@@ -47,7 +48,7 @@ class Player:
             return self.HAMR
 
     def startAnxiety(self,anxTime):
-        anxiety= sqrt(exp(anxTime)/exp(10))
+        anxiety= sqrt(exp(anxTime-self.willToWin))
        
         if (abs(anxiety-self.anxiety>=10)):
             self.HAMR +=4
