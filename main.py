@@ -14,7 +14,14 @@ i=0
 
 #Fixed it at 0.04 cause that is what they have in the paper
 for i in range(5):
-    player= Player(10)
+   
+    #Readiness suggestions:
+    #avg ready=10
+    #really ready >10
+    #not ready <10
+    
+    #player (10,10) -> the first 10= readiness, second 10 = player fundamental value
+    player= Player(10,10)
     game= Game(player,0.04,1)
     game.play()
     result=game.getDelay()
